@@ -7,6 +7,8 @@ Inspired by the likes of Drupal Quickstart and Pro Drupal virtual machines I wan
 
 The small script leverages the useful virtualhost.sh project and assumes a copy of dnsmasq running which points all .dev domains to the localhost.
 
+You'll need to chmod a+x localdrupal.sh in order to run this after downloading.  
+
 Example usage: 
-bash localdrupal.sh test.dev
+localdrupal.sh create test.dev
 
