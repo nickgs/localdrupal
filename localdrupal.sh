@@ -4,7 +4,7 @@
 #edit MYPASS with the mysql username you would like to use and MYPASS with mysql password. Probably not root. 
 MYUSER=drupaluser
 MYPASS=drupaluser
-MYHOST=local.dev
+MYHOST=localhost
 
 HOST=$2
 DATABASE=${HOST/./_}
@@ -33,7 +33,7 @@ delete() {
 	#echo $HOST
 	#now we need to delete that pesky database
 	echo "MYSQL Password"
-	mysql -u root -p -e "DROP DATABASE $DATABASE"
+	mysql -u $MYUSER -p -e "DROP DATABASE $DATABASE"
 	
 	}
 	
