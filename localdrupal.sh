@@ -14,9 +14,7 @@ create() {
 
 	#now lets install a drupal site at this addresss
 	cd ~/Sites/$HOST/
-	rm index.html  #We can just remove the index that virtualhost creates.
-	#we need to figure out where to move the logs to couldn't we just edit the vh and move the directory in the script
-
+	rm -Rf *  #turns out we need to remove all files for git to work.
 	#create database
 	echo "MYSQL Password"
 	mysql -u $MYUSER -p -e "CREATE DATABASE $DATABASE"
@@ -26,6 +24,9 @@ create() {
 
 	#do a site install
 	drush site-install --db-url=mysql://$MYUSER:$MYPASS@$MYHOST/$DATABASE
+
+	#recreate log files to fix Apache
+	mkdir logs
 }
 
 delete() {
